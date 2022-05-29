@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net452</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <DebugType>portable</DebugType>
+        <PublicizeAsReferenceAssemblies>false</PublicizeAsReferenceAssemblies>
+
+        <Version>1.0.0</Version>
+        <Description>Quick mod for removing the stupid pauses</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="$(JumpKingPath)/BepInEx/core/*.dll;$(JumpKingPath)/BepInEx.*.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="$(JumpKingPath)/JumpKing.exe;$(JumpKingPath)/LanguageJK.dll;$(JumpKingPath)/MonoGame.*.dll">
+            <Private>false</Private>
+        </Reference>
+
+        <PackageReference Include="Krafs.Publicizer" Version="1.0.2" />
+
+        <PackageReference Include="BepInEx.AutoPlugin" Version="1.0.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Publicize Include="JumpKing" />
+    </ItemGroup>
+</Project>
